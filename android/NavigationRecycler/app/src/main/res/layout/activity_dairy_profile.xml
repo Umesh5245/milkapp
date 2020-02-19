@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgapps"
+    tools:context=".DairyProfileActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView3"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:layout_marginTop="140dp"
+        android:src="@drawable/person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/montserrat_light"
+        android:text="Mother Dairy"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/circleImageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.734" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+       android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView3">
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="58"
+                android:textColor="#253574"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Subscribers"
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="5"
+                android:textColor="#253574"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Products"
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="4.5"
+                android:textColor="#253574"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Ratings"
+
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="0sp"
+        android:background="@drawable/dairy_profile_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="About Dairy"
+            />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:layout_height="wrap_content">
+         <LinearLayout
+             android:layout_marginTop="10sp"
+             android:paddingLeft="10sp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+
+             <ImageView
+                 android:layout_width="35sp"
+                 android:layout_height="35sp"
+                 android:src="@drawable/address"/>
+
+
+
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingLeft="10sp"
+                 android:layout_gravity="center"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:fontFamily="@font/montserrat_regular"
+                     android:textColor="#000000"
+                     android:layout_height="wrap_content"
+                     android:textSize="15sp"
+                     android:text="Address"/>
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:fontFamily="@font/montserrat_light"
+                     android:layout_height="wrap_content"
+                     android:text="Hostel-A,room 510, Marwadi university,Rajkot "/>
+
+
+             </LinearLayout>
+
+
+
+         </LinearLayout>
+         <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingLeft="10sp"
+         android:layout_marginTop="10sp"
+         android:orientation="horizontal">
+
+         <ImageView
+             android:layout_width="35sp"
+             android:layout_height="35sp"
+             android:paddingTop="2sp"
+             android:src="@drawable/mobile"/>
+
+
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:paddingLeft="10sp"
+             android:layout_gravity="center"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:textColor="#000000"
+                 android:fontFamily="@font/montserrat_regular"
+                 android:layout_height="wrap_content"
+                 android:textSize="15sp"
+                 android:text="Mobile"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:fontFamily="@font/montserrat_light"
+                 android:layout_height="wrap_content"
+                 android:text="8469514210"/>
+
+
+         </LinearLayout>
+
+
+
+     </LinearLayout>
+
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:paddingLeft="10sp"
+             android:layout_marginTop="10sp"
+             android:orientation="horizontal">
+
+             <ImageView
+                 android:layout_width="45sp"
+                 android:layout_height="45sp"
+                 android:src="@drawable/email"/>
+
+
+
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingLeft="10sp"
+                 android:layout_gravity="center"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:textColor="#000000"
+                     android:fontFamily="@font/montserrat_regular"
+                     android:layout_height="wrap_content"
+                     android:textSize="15sp"
+                     android:text="Email"/>
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:fontFamily="@font/montserrat_light"
+                     android:layout_height="wrap_content"
+                     android:text="mayank17081998@gmail.com"/>
+
+
+             </LinearLayout>
+
+
+
+         </LinearLayout>
+
+
+
+
+
+
+
+     </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:gravity="center"
+          android:layout_height="match_parent">
+
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/montserrat_light"
+              android:textColor="#ffffff"
+              android:text="View "
+              android:id="@+id/viewProduct"
+              android:textSize="15sp"
+              android:paddingLeft="50sp"
+              android:paddingRight="50sp"
+              android:background="@drawable/view_dairy_specific_product"
+
+
+
+
+              />
+
+
+
+
+      </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

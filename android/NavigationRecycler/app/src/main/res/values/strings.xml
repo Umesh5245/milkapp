@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NavigationRecycler</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_user_name">Mayank</string>
+    <string name="main_my_calendar">My Calendar</string>
+    <string name="main_my_plan">My Plan</string>
+    <string name="main_vacation">Vacation</string>
+    <string name="main_delivered">Delivered</string>
+    <string name="main_active">Active</string>
+    <string name="dairy_subscribe">Subscribe</string>
+</resources>

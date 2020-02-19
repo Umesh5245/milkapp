@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+<!--    <item android:icon="@drawable/ic2" android:id="@+id/drawer_calendar" android:title="@string/calendar"/>-->
+<!--    <item android:icon="@drawable/ic5" android:id="@+id/drawer_product" android:title="@string/milk_plan"/>-->
+<!--    <item android:icon="@drawable/ic1" android:id="@+id/drawer_wallet" android:title="@string/my_wallet"/>-->
+<!--    <item android:icon="@drawable/ic3" android:id="@+id/drawer_bill" android:title="@string/view_bill"/>-->
+<!--    <item android:icon="@drawable/ic4" android:id="@+id/drawer_vacation" android:title="@string/vacation"/>-->
+<!--    <item android:title="Others">-->
+<!--        <menu android:id="@+id/lower_group" android:checkableBehavior="none">-->
+<!--            <item android:icon="@drawable/ic9" android:id="@+id/drawer_profile" android:title="@string/profile"/>-->
+<!--            <item android:icon="@drawable/ic10" android:id="@+id/drawer_offers" android:title="@string/offers"/>-->
+<!--            <item android:icon="@drawable/my_wallet" android:id="@+id/drawer_transaction" android:visible="false" android:title="@string/transaction_history"/>-->
+<!--            <item android:icon="@drawable/ic_refer" android:id="@+id/drawer_refer_and_earn" android:title="@string/dont_pay_for_milk"/>-->
+<!--            <item android:icon="@drawable/ic6" android:id="@+id/drawer_contact" android:title="Help"/>-->
+<!--            <item android:icon="@drawable/ic6" android:id="@+id/drawer_rateus" android:visible="false" android:title="@string/feedback"/>-->
+<!--            <item android:icon="@drawable/ic8" android:id="@+id/drawer_logout" android:title="@string/log_out"/>-->
+<!--        </menu>-->
+<!--    </item>-->
+</menu>

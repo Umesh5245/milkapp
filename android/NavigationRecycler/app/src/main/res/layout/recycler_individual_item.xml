@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:layout_marginLeft="10sp"
+    android:elevation="20sp"
+    android:layout_marginBottom="10sp"
+    android:layout_marginRight="5sp"
+        app:cardElevation="10sp"
+    android:orientation="vertical" android:layout_width="160sp"
+    android:layout_height="200sp">
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:background="@drawable/individual_dairy_item_items_background"
+      android:layout_height="match_parent">
+
+      <LinearLayout
+          android:orientation="horizontal"
+
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+
+
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <ImageView
+                  android:layout_width="80sp"
+                  android:layout_height="80sp"
+                  android:src="@drawable/milk"/>
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_marginLeft="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+
+                      android:fontFamily="@font/montserrat_light"
+                      android:text="Milk"
+                      android:textSize="15sp"/>
+
+
+
+
+
+
+              </LinearLayout>
+              <TextView
+                  android:layout_marginLeft="20sp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+
+                  android:fontFamily="@font/montserrat_light"
+                  android:text="Rs. 50"
+                  android:textSize="15sp"/>
+
+
+
+
+
+              <LinearLayout
+                  android:orientation="horizontal"
+                  android:layout_marginLeft="20sp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+                  <ImageView
+                      android:layout_width="20sp"
+                      android:layout_height="20sp"
+                      android:src="@drawable/subscribers"/>
+                  <TextView
+                      android:layout_marginLeft="5sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="12sp"
+                      android:text="184"
+                      />
+
+              </LinearLayout>
+
+
+          </LinearLayout>
+
+
+
+
+
+
+
+
+          <TextView
+              android:layout_width="30sp"
+              android:layout_height="30sp"
+              android:layout_marginLeft="30sp"
+              android:layout_marginTop="5sp"
+              android:background="@drawable/tick_mark"/>
+
+
+
+
+
+      </LinearLayout>
+
+
+
+  </LinearLayout>
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
