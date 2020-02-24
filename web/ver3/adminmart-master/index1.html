@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="unnamed.png">
+    <title>Milk App</title>
+    <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="dist/css/style.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript"src ="js\chart.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+<!--<script src="auth.js"></script>-->
+<script src ="tempp.js"></script>
+<script type="text/javascript" src="js/temp.js"></script>
+<script src="auth.js"></script>
+</head>
+
+<body>
+    
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin6">
+           |
+           <nav class="navbar top-navbar navbar-expand-md">
+            <div class="navbar-header" data-logobg="skin6">
+                <!-- This is for the sidebar toggle which is visible on mobile only -->
+                <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                        class="ti-menu ti-close"></i></a>
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-brand">
+                    <!-- Logo icon -->
+                    <a href="index1.html">
+                        <b class="logo-icon">
+                            <!-- Dark Logo icon -->
+                            <img src="unnamed.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="unnamed.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="unnamed.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Toggle which is visible on mobile only -->
+                <!-- ============================================================== -->
+                <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                    data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
+                        class="ti-more"></i></a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            
+                <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+                 
+                </ul>
+            
+                <ul class="navbar-nav float-right">
+                    <!-- ============================================================== -->
+                    <!-- Search -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link" href="javascript:void(0)">
+                            <form>
+                                <div class="customize-input">
+                                    <input class="form-control custom-shadow custom-radius border-0 bg-white"
+                                        type="search" placeholder="Search" aria-label="Search">
+                                    <i class="form-control-icon" data-feather="search"></i>
+                                </div>
+                            </form>
+                        </a>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
+                                width="40">
+                            <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span id="demo"
+                                    class="text-dark">Mother Diary1</span> <i data-feather="chevron-down"
+                                    class="svg-icon"></i></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
+                                    class="svg-icon mr-2 ml-1"></i>
+                                My Profile</a>
+                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card"
+                                    class="svg-icon mr-2 ml-1"></i>
+                                My Balance</a>
+                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="mail"
+                                    class="svg-icon mr-2 ml-1"></i>
+                                Inbox</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
+                                    class="svg-icon mr-2 ml-1"></i>
+                                Account Setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" onclick="logout()"><i data-feather="power"
+                                    class="svg-icon mr-2 ml-1"></i>
+                                Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View
+                                    Profile</a></div>
+                        </div>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                </ul>
+            </div>
+        </nav>
+          </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!--done -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" data-sidebarbg="skin6">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index1.html"
+                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                                    class="hide-menu">Dashboard</span></a></li>
+                        <li class="list-divider"></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="transaction.html"
+                            aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                                class="hide-menu">Transaction </span></a></li>
+                                <li class="list-divider"></li>
+                               
+                    <li class="list-divider"></li>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                            class="hide-menu">Orders </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item"><a href="subscribers.html" class="sidebar-link"><span
+                                    class="hide-menu"> Daily Order
+                                </span></a>
+                        </li>
+                        <li class="sidebar-item"><a href="specialorder.html" class="sidebar-link"><span
+                                    class="hide-menu"> special Order
+                                </span></a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-calendar.html"
+                                aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
+                                    class="hide-menu">Calendar</span></a></li>
+
+                       
+
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="ui-cards.html"
+                                aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
+                                    class="hide-menu">track
+                                </span></a>
+                        </li>
+                        <li class="list-divider"></li>
+                     
+                    <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="docs/docs.html"
+                                aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
+                                    class="hide-menu">Documentation</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
+                                aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
+                                    class="hide-menu">Logout</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <!--done-->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h3  class="page-title text-truncate text-dark font-weight-medium mb-1" >Good Morning  <span id="demo11"> Mother Diary11</span></h3>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index1.html">Dashboard</a>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                                  </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- *************************************************************** -->
+                <!-- Start First Cards -->
+                <!-- *************************************************************** -->
+                <div class="card-group">
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium"><span id="new_customer">0</span></h2>
+                                        <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" id="percentage_change">+18.33%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New customers</h6>
+                                </div>
+                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
+                                            class="set-doller">Rs.</sup><span id="incomeMonth">0</span></h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Earnings of Month
+                                    </h6>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <h2 class="text-dark mb-1 font-weight-medium"><span id="total_customer">0</span></h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Customers</h6>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *************************************************************** -->
+                <!-- End First Cards -->
+                <!-- *************************************************************** -->
+                <!-- *************************************************************** -->
+                <!-- Start Sales Charts Section -->
+                <!-- *************************************************************** -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 ">
+                        <div class="card"style="width: 410px; height: 700px;" >
+                            <div class="card-body" >
+                                <h4 class="card-title">Total Sales</h4>
+                               <div id="piechart_3d" style="width: 400px; height: 500px;"></div>
+                           
+                                <ul class="list-style-none mb-0">
+                                    <li>
+                                        <i class="fas fa-circle text-primary font-10 mr-2"></i>
+                                        <span class="text-muted">Milk</span>
+                                        <span class="text-dark float-right font-weight-medium">R    s.20346</span>
+                                    </li>
+                                    <li class="mt-3">
+                                        <i class="fas fa-circle text-danger font-10 mr-2"></i>
+                                        <span class="text-muted">panner and ghee</span>
+                                        <span class="text-dark float-right font-weight-medium">Rs25108</span>
+                                    </li>
+                                    <li class="mt-3">
+                                        <i class="fas fa-circle text-cyan font-10 mr-2"></i>
+                                        <span class="text-muted">other products</span>
+                                        <span class="text-dark float-right font-weight-medium">Rs.21204</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                 
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card"  style="width: 900px; height: 500px;">
+                            <div class="card-body">
+                                <h4 class="card-title">Net Income</h4>
+                               
+                                <div id="chartContainer" style="height: 300px; width: 70%;display: inline-block;"> </div>
+                                <script>
+                              
+  
+                                </script>
+                                                               <ul class="list-inline text-center mt-5 mb-2">
+                                    <li class="list-inline-item text-muted font-italic">Sales for this month</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *************************************************************** -->
+                <!-- End Sales Charts Section -->
+                <!-- *************************************************************** -->
+                <!-- *************************************************************** -->
+                <!-- Start Location and Earnings Charts Section -->
+                <!-- *************************************************************** -->
+                <div class="row">
+                    
+                    <div class="col-md-6 col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start">
+                                    <h4 class="card-title mb-0">Daily milk Sold</h4>
+                                                            </div>
+                                <div >
+                                    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                              
+                                    <div id="chartContainer1" style="height: 370px; width: 100%;display: inline-block;"></div>
+                                    
+                                        
+                                </div>
+                                <ul class="list-inline text-center mt-4 mb-0">
+                                    <li class="list-inline-item text-muted font-italic">Daily Statistics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *************************************************************** -->
+                <!-- End Location and Earnings Charts Section -->
+                <!-- *************************************************************** -->
+                <!-- *************************************************************** -->
+                <!-- Start Top Leader Table -->
+                <!-- *************************************************************** -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <h4 class="card-title">Delivery Boy</h4>
+                                    <div class="ml-auto">
+                                       
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap v-middle mb-0">
+                                        <thead>
+                                            <tr class="border-0">
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Name
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Area
+                                                </th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Status</th>
+                                                                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                  
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Rajesh PAtel</h5>
+                                                            <span class="text-muted font-14">898955465</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Gauridad</td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Delivering</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                  
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Rajesh PAtel</h5>
+                                                            <span class="text-muted font-14">898955465</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Gauridad</td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Delivering</td>
+
+                                            </tr>   <tr>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                  
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Brijesh PAtel</h5>
+                                                            <span class="text-muted font-14">8998565465</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Besdi</td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Delivering</td>
+
+                                            </tr>   <tr>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                  
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">vikas mojria</h5>
+                                                            <span class="text-muted font-14">898955465</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">150 feet </td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Delivering</td>
+
+                                            </tr>   <tr>
+                                                <td class="border-top-0 px-2 py-4">
+                                                    <div class="d-flex no-block align-items-center">
+                                                  
+                                                        <div class="">
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">karan PAtel</h5>
+                                                            <span class="text-muted font-14">898955465</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">yagnik road</td>
+                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Delivering</td>
+
+                                            </tr>
+                                                                                </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *************************************************************** -->
+                <!-- End Top Leader Table -->
+                <!-- *************************************************************** -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+          
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+  <script src="auth.js"></script>
+
+  <script> 
+     var firebaseConfig = {
+   apiKey: "AIzaSyCVtaJ0xX6qP1Z2ovR-9l-eoBW_a_kcZr8",
+   authDomain: "navigationrecycler.firebaseapp.com",
+   databaseURL: "https://navigationrecycler.firebaseio.com",
+   projectId: "navigationrecycler",
+   storageBucket: "navigationrecycler.appspot.com",
+   messagingSenderId: "114599570077",
+   appId: "1:114599570077:web:8ef2d590c753ef34dbc274",
+   measurementId: "G-J1KDJ5HYJK"
+ };
+ firebase.initializeApp(firebaseConfig);
+ firebase.analytics();     
+           const db1=firebase.firestore();
+     </script>
+<script src="auth.js"></script>
+<script type="text/javascript">
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChart);
+var arr=[5];
+
+function drawChart() {   
+       
+    console.log(sessionStorage.getItem("email1"));
+    var emailtemp=(sessionStorage.getItem("email1"));
+   
+   // var docRef = db1.collection("admin").doc(email_id);
+    db1.collection(emailtemp).where("montlyAmountb", "==", true)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data().monthlyAmount);
+            sessionStorage.setItem(doc.id, doc.data().monthlyAmount);
+
+        });  
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    })
+    console.log(sessionStorage.getItem("cheesse")+"hrel");
+var cheesse=(sessionStorage.getItem("cheesse"));
+var cheesse1=parseFloat(cheesse);
+var curd=(sessionStorage.getItem("curd"));
+var curd1=parseFloat(curd);
+var panner=(sessionStorage.getItem("panner"));
+var panner1=parseFloat(panner);
+
+var milk=(sessionStorage.getItem("milk"));
+var milk1=parseFloat(milk);
+  var data = google.visualization.arrayToDataTable([
+
+    ['Product', 'Income'],
+    ['Chesse',cheesse1],
+    ['curd',curd1],
+    ['panner', panner1],
+    ['milk ', milk1],
+
+  ]);
+
+  var options = {
+    is3D: true,
+    legend: 'bottom',         
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+  chart.draw(data, options);
+  
+  
+}
+</script>
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+    
+    </style>
+<script>
+                 console.log(sessionStorage.getItem("email1"));
+    var emailtemp=(sessionStorage.getItem("email1"));
+  
+var arr=[];
+var temp=0;
+
+
+    var docRef = db1.collection(emailtemp).doc("dailySales");
+
+docRef.get().then(function(doc) {
+if (doc.exists) { 
+    console.log("Document data:", doc.data());
+    console.log("document customdata foo: " + doc.data().feb.ID);    
+       console.log("Document data:", doc.data().feb);
+       arr=doc.data().feb;
+console.log(arr);
+
+       var sum = arr.reduce(function(a, b){
+    return a + b;
+}, 0);
+
+sum=sum/25;
+
+sessionStorage.setItem("avg", sum);
+
+
+sessionStorage.setItem("one", arr[1]);sessionStorage.setItem("two", arr[2]);sessionStorage.setItem("three", arr[3]);sessionStorage.setItem("four", arr[4]);
+sessionStorage.setItem("five", arr[5]);sessionStorage.setItem("six", arr[6]);sessionStorage.setItem("seven", arr[7]);sessionStorage.setItem("eight", arr[8]);
+sessionStorage.setItem("nine", arr[9]);sessionStorage.setItem("ten", arr[10]);sessionStorage.setItem("elev", arr[11]);sessionStorage.setItem("twel", arr[12]);
+sessionStorage.setItem("thret", arr[13]);sessionStorage.setItem("fourt", arr[14]);sessionStorage.setItem("fivet", arr[15]);sessionStorage.setItem("sixt", arr[16]);
+sessionStorage.setItem("sevt", arr[17]);sessionStorage.setItem("eigte", arr[18]);sessionStorage.setItem("ninet", arr[19]);sessionStorage.setItem("twet", arr[20]);
+sessionStorage.setItem("twone", arr[21]);sessionStorage.setItem("twtwo", arr[22]);sessionStorage.setItem("twthr", arr[23]);sessionStorage.setItem("twfou", arr[24]);
+sessionStorage.setItem("twfiv", arr[25]);
+} else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+}
+}).catch(function(error) {
+console.log("Error getting document:", error);
+});
+
+var one=parseFloat((sessionStorage.getItem("one")));var two=parseFloat((sessionStorage.getItem("two")));var three=parseFloat((sessionStorage.getItem("three")));var four=parseFloat((sessionStorage.getItem("four")));
+var five=parseFloat((sessionStorage.getItem("five")));var six=parseFloat((sessionStorage.getItem("six")));var seven=parseFloat((sessionStorage.getItem("seven")));var eight=parseFloat((sessionStorage.getItem("eight")));
+var nine=parseFloat((sessionStorage.getItem("nine")));var ten=parseFloat((sessionStorage.getItem("ten")));var elev=parseFloat((sessionStorage.getItem("elev")));var twel=parseFloat((sessionStorage.getItem("twel")));
+var thret=parseFloat((sessionStorage.getItem("thret")));var fourt=parseFloat((sessionStorage.getItem("fourt")));var fivet=parseFloat((sessionStorage.getItem("fivet")));var sixt=parseFloat((sessionStorage.getItem("sixt")));
+var sevt=parseFloat((sessionStorage.getItem("sevt")));var eigte=parseFloat((sessionStorage.getItem("eigte")));var ninet=parseFloat((sessionStorage.getItem("ninet")));var twet=parseFloat((sessionStorage.getItem("twet")));
+var twone=parseFloat((sessionStorage.getItem("twone")));var twtwo=parseFloat((sessionStorage.getItem("twtwo")));var twthr=parseFloat((sessionStorage.getItem("twthr")));var twfou=parseFloat((sessionStorage.getItem("twfou")));
+var twfiv=parseFloat((sessionStorage.getItem("twfiv")));
+var avg=parseFloat((sessionStorage.getItem("avg")));
+
+console.log(one);
+var chart = new CanvasJS.Chart("chartContainer1", {
+animationEnabled: true,  
+title:{
+text: "Daily sales"
+},
+axisY: {
+title: "Milk Sold",
+valueFormatString: "#",
+suffix: "liter",
+stripLines: [{
+value: avg,
+label: "Average"
+}]
+},
+data: [{
+yValueFormatString: "#,### Units",
+xValueFormatString: "FEb ",
+type: "spline",
+dataPoints: [
+{x: 01, y: one},
+{x: 02, y: two},
+{x: 03, y: three},
+{x: 04, y: four},
+{x: 05, y: five},
+{x: 06, y: six},
+{x: 07, y: seven},
+{x: 08, y: eight},
+{x: 09, y: nine},
+{x: 10, y: ten},
+{x: 11, y: elev},
+{x: 12, y: twel},
+{x: 13, y: thret},
+{x: 14, y: fourt},
+{x: 15, y: fivet},
+{x: 16, y: sixt},
+{x: 17, y: sevt},
+{x: 18, y: eigte},
+{x: 19, y: ninet},
+{x: 20, y: twet},
+{x: 21, y: twone},
+{x: 22, y: twtwo},
+{x: 23, y: twthr},
+{x: 24, y: twfou},
+{x: 25, y: twfiv},
+
+
+]
+}]
+});
+console.log(sessionStorage.getItem("arr"));
+chart.render();  
+
+     </script>
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+<script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- apps -->
+<!-- apps -->
+<script src="dist/js/app-style-switcher.js"></script>
+<script src="dist/js/feather.min.js"></script>
+<script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+<script src="dist/js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src="dist/js/custom.min.js"></script>
+<!--This page JavaScript -->
+<script src="assets/extra-libs/c3/d3.min.js"></script>
+<script src="assets/extra-libs/c3/c3.min.js"></script>
+<script src="assets/libs/chartist/dist/chartist.min.js"></script>
+<script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+<script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+<script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
+</html> 
